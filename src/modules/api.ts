@@ -1,19 +1,11 @@
-async function requestUser(username: string, repo?: string, followers?: string, following?: string){
+async function requestUser(username: string, repo?: string){
     let url = `https://api.github.com/users/${username}`;
 
     if (repo) {
         url += `/repos`
     }
 
-    if (followers) {
-        url += `/followers`
-    }
-
-    if (following) {
-        url += `/following`
-    }
-
-    const args = {'username': username, 'repo': repo, 'followers': followers, 'following': following};
+    const args = {'username': username, 'repo': repo};
     const response = await fetch(url);
 
     if ( response.ok ) {
@@ -27,10 +19,22 @@ async function requestUser(username: string, repo?: string, followers?: string, 
     }
 }
 
-async function dataDisplay () {
+async function displayData() {
     try {
         const data = await requestUser('inevdhoven');
-        console.log(data)
+        // console.log(data)
+        return data;
+    } catch (error) {
+        console.log(error)
+        console.log('ERROR')
+        window.location.hash = "error"
+    }
+}
+
+async function displayMyWork() {
+    try {
+        const data = await requestUser('inevdhoven', 'repos');
+        // console.log(data)
         return data;
     } catch (error) {
         console.log(error)
@@ -41,5 +45,6 @@ async function dataDisplay () {
 
 export default{
     requestUser,
-    dataDisplay
+    displayData,
+    displayMyWork
 }
