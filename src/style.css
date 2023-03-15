@@ -49,10 +49,11 @@
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+}
+
+body > main > section {
+  container: section / inline-size;
+  margin: 0 10cqi;
 }
 
 h1 {
@@ -63,18 +64,13 @@ h1 {
 }
 
 a {
+  font-size: 1rem;
   text-decoration: none;
-}
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
 /* MENU */
 nav {
+  padding: 3cqi;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -94,7 +90,9 @@ nav ul li a {
 }
 
 /* HERO */
-
+canvas {
+  display: none;
+}
 
 /* ABOUT */
 
@@ -105,5 +103,11 @@ nav ul li a {
   :root {
     color: #213547;
     background-color: #ffffff;
+  }
+}
+
+@container section (min-width: 48em) {
+  canvas {
+    display: block;
   }
 }
