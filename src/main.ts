@@ -6,16 +6,16 @@ import api from './modules/api.js'
 import router from './modules/router.js'
 // import myWork from './modules/my-work.js'
 
-createApp(Header).mount('body > header')
-createApp(App).mount('body > main')
+createApp(Header).use(router).mount('body > header')
+createApp(App).use(router).mount('body > main')
 
 
-api.displayData().then((result) => {
-    router.onRouteChanged(result);
-    // console.log(result)
-});
+// api.displayData().then((result) => {
+//     router.onRouteChanged(result);
+//     // console.log(result)
+// });
 
-api.displayMyWork().then((resultWork) => {
-    router.onRouteChanged(resultWork);
-    // console.log(resultWork)
-});
+// api.displayMyWork().then((resultWork) => {
+//     router.onRouteChanged(resultWork);
+//     // console.log(resultWork)
+// });

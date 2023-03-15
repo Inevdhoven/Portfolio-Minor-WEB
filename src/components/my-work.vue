@@ -40,5 +40,13 @@
 </template>
 
 <style scoped>
-
+    h2 {
+       margin: 0; 
+       font-size: 2rem;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
 </style>

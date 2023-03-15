@@ -15,7 +15,7 @@
 <template>
     <article>
         <h2>My GitHub</h2>
-        <p>Usernam: {{ myData.login }}</p>
+        <p>Username: {{ myData.login }}</p>
         <p>Name: {{ myData.name }}</p>
         <p>Location: {{ myData.location }}</p>
         <p>Bio: {{ myData.bio }}</p>
