@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+
 @font-face {
   font-family: Inconsolata;
   font-weight: 300;
@@ -45,6 +47,17 @@
 
   --black: hsl(0, 0%, 14%);
   --white: hsl(0, 0%, 100%);
+
+  --code-blue: hsl(198, 97%, 75%);
+  --code-red: hsl(355, 81%, 67%);
+  --code-green: hsl(90, 67%, 72%);
+  --code-purple: hsl(280, 65%, 71%);
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
 }
 
 body {
@@ -53,7 +66,7 @@ body {
 
 body > main > section {
   container: section / inline-size;
-  margin: 0 10cqi;
+  padding: 0 10cqi 5cqi;
 }
 
 h1 {
@@ -61,6 +74,10 @@ h1 {
   font-size: 1.5rem;
   font-weight: 800;
   line-height: 1.1;
+}
+
+h2 {
+  font-size: 2rem;
 }
 
 a {
@@ -71,9 +88,19 @@ a {
 /* MENU */
 nav {
   padding: 3cqi;
+
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+
+  position: relative;
+  z-index: 1;
+
+  container: nav / inline-size;
+}
+
+nav h1 {
+  color: var(--white);
 }
 
 nav ul {
@@ -86,18 +113,156 @@ nav ul {
 }
 
 nav ul li a {
+  color: var(--white);
   text-decoration: none;
+
+  transition: color 250ms ease;
+}
+
+nav ul li a:hover {
+  color: var(--code-blue);
+}
+
+nav button {
+  display: none;
+}
+
+@container nav (max-width: 34.375em) {
+  nav ul {
+    padding: 1rem;
+    border-radius: 1rem;
+
+    display: none;
+    flex-direction: column;
+
+    position: absolute;
+    top: 4rem;
+    right: 1rem;
+    z-index: 2;
+
+    background: var(--black);
+    box-shadow: 0 0 0.4rem 0.2rem var(--code-blue);
+  }
+
+  nav ul.menu-open {
+    display: flex;
+  }
+
+  nav button {
+    display: block;
+    width: 1.5rem;
+    height: 0.2rem;
+    border: none;
+    border-radius: 0.2rem;
+
+    position: relative;
+
+    cursor: pointer;
+
+    background: var(--white);
+  }
+
+  nav button::before,
+  nav button::after {
+    content: '';
+   
+    width: 1.5rem;
+    height: 0.2rem;
+    border-radius: 0.2rem;
+
+    position: absolute;
+    top: -0.5rem;
+    left: 0;
+
+    background: var(--white);
+  }
+
+  nav button::after {
+    top: 0.5rem;
+  }
 }
 
 /* HERO */
-canvas {
+spline-viewer {
   display: none;
 }
 
 /* ABOUT */
+article:first-of-type,
+h2 + ul li {
+  --angle: 0deg;
+  padding: 2rem;
+  margin: auto;
 
+  border: 0.5rem solid transparent;
+  border-radius: 2em;
+
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  position: relative;
+  box-sizing: border-box;
+
+  color: var(--white);
+  background: var(--black);
+  background-clip: padding-box;
+}
+
+article:first-of-type::before,
+h2 + ul li::before {
+  content: '';
+
+  border-radius: inherit;
+  margin: -5px;
+
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  
+  background: linear-gradient(var(--angle), #E417A9, #AC95FF, #00F4FE);
+
+  animation: 5s rotate linear infinite;
+}
 
 /* WORK */
+h2 + ul li {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  
+  display: block;
+}
+
+h2 + ul li::before {
+  animation: none;
+}
+
+h2 + ul li:has(a:hover)::before {
+  animation: 1s rotate linear infinite;
+}
+
+h2 + ul li a h3 {
+  margin: 0;
+
+  font-size: 1.3rem;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+h2 + ul li a p,
+h2 + ul li a span {
+  color: var(--white);
+}
+
+@keyframes rotate {
+  0% {
+    --angle: 0deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
+}
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -106,8 +271,4 @@ canvas {
   }
 }
 
-@container section (min-width: 48em) {
-  canvas {
-    display: block;
-  }
-}
+
