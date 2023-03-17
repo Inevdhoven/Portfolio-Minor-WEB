@@ -9,5 +9,6 @@
             <li><router-link to="my-work">My work</router-link></li>
             <li><a href="mailto:inevdhoven@gmail.com">inevdhoven@gmail.com</a></li>
         </ul>
+        <button></button>
     </nav>
 </template>
