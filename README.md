@@ -1,18 +1,35 @@
-# Vue 3 + TypeScript + Vite
+# Mijn portfolio
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Voor de eerste Projectweek van de minor Web design & Development heb ik een portfolio gemaakt van al het werk dat ik op GitHub heb staan. De data die ik heb gebruikt komt van de GitHub API.
 
-## Recommended IDE Setup
+![Homepage portfolio](./src/assets/homepage.png)
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Mijn Proces
 
-## Type Support For `.vue` Imports in TS
+Mijn proces kun je [hier](https://smooth-freeze-4ae.notion.site/Projectweek-1-5b8c77d8c5a54b678f43308a44c56e4f) lezen op Notion.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## Hoe gebruik je de GitHub API?
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+De GitHub API heeft veel verschillende linkjes die je kunt gebruiken om data op te halen. Ik heb de volgende linkjes gebruikt:
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+1. [https://api.github.com/users/Inevdhoven](https://api.github.com/users/Inevdhoven) - Hiermee haal ik verschillende informatie op van mijn GitHub account.
+2. [https://api.github.com/users/Inevdhoven/repos](https://api.github.com/users/Inevdhoven/repos) - Hiermee haal ik alle repositories op van mijn GitHub account.
+
+## Hoe installeer je mijn portfolio?
+
+Wanneer je mijn portfolio lokaal wilt laten draaien, kun je de volgende stappen volgen:
+
+1. Open de terminal en ga op zoek naar de map waar je de webapp wilt opslaan.
+2. Clone de repository met de volgende commando: `git clone https://github.com/Inevdhoven/Portfolio-Minor-WEB.git`
+3. Open de map in je code editor.
+4. Open de terminal in je code editor en voer het volgende commando uit: `npm install`
+5. Voer het volgende commando uit: `npm run dev`
+6. Open de webapp in je browser door t klikken op de aangegeven link in de terminal
+
+## Waar heb ik mijn project mee gemaakt?
+
+Dit project is gemaakt met Vite met de talen Vue en TypeScript. Dit was de eerste keer dat ik met Vite, Vue en TypeScript heb gewerkt. Voor een week werken met nieuwe talen was best een uitdaging, ik snap nog lang niet alles, maar ik heb wel veel geleerd.
+
+## License
+
+Deze Single Page App maakt gebruik van een MIT License. Je kunt [hier](https://github.com/Inevdhoven/Portfolio-Minor-WEB/blob/main/LICENSE) meer lezen over de MIT License.
